@@ -41,7 +41,7 @@ $(document).ready(function () {
     }
 
     $('#btn').click(function () {
-        var input = document.getElementById('text').value;
+        var input = document.getElementById('text').value.toLowerCase();
         var number = document.getElementById('number').value;
         var arr = getWordsNew(input);
         var arr2 = [];
