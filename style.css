@@ -1,0 +1,60 @@
+body{
+    padding-top: 20px;
+    background-image: url(./bg.png);
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+/* .overlay:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: .4;
+} */
+.mainHeading{
+    font-family: 'Titan One', cursive;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.container{
+    text-align: center;
+}
+
+form{
+    margin-bottom: 20px;
+}
+
+#output{
+    width: 100%;
+    font-size: 1.5em;
+}
+
+#info{
+    margin: 0px 0 50px 0;
+    font-size: 1.2em;
+}
+
+.disabledBtn{
+    background-color: darkgray;
+    text-decoration: line-through;
+}
+
+.disabledBtn:hover{
+    background-color: darkgray;
+    text-decoration: line-through;
+}
+
+.btn-success{
+    font-size: 1.1em;
+}
+
+@media screen and (max-width:600px){
+    .btn-success{
+        width: 100%;
+    }
+}
