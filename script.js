@@ -60,7 +60,7 @@ $(document).ready(function () {
             var filtered = compare(dictArr, arr2);
             console.log(filtered);
 
-            info.innerHTML = 'Ima ukupno ' + filtered.length + ' kombinacija(e).';
+            info.innerHTML = 'Pronađeno je ukupno ' + filtered.length + ' reči.';
 
             filtered.sort();
 
@@ -73,7 +73,7 @@ $(document).ready(function () {
 
     $('#resetBtn').click(function () {
         output.innerHTML = '';
-        info.innerHTML = 'Ima ukupno 0 kombinacija(e).';
+        info.innerHTML = '';
     });
 
 
