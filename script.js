@@ -41,28 +41,33 @@ $(document).ready(function () {
     }
 
     $('#btn').click(function () {
-        var input = document.getElementById('text').value.toLowerCase();
-        var number = document.getElementById('number').value;
-        var arr = getWordsNew(input);
-        var arr2 = [];
+        info.innerHTML = 'Pričekajte... Kombinuju se slova...';
+        output.innerHTML = '';
 
-        for (i = 0; i < arr.length; i++) {
-            if (arr[i].length == number) {
-                arr2.push(arr[i]);
-                // arr2 = arr.splice(i, 1);
+        setTimeout(function () {
+            var input = document.getElementById('text').value.toLowerCase();
+            var number = document.getElementById('number').value;
+            var arr = getWordsNew(input);
+            var arr2 = [];
+
+            for (i = 0; i < arr.length; i++) {
+                if (arr[i].length == number) {
+                    arr2.push(arr[i]);
+                    // arr2 = arr.splice(i, 1);
+                }
             }
-        }
 
-        var filtered = compare(dictArr,arr2);
-        console.log(filtered);
+            var filtered = compare(dictArr, arr2);
+            console.log(filtered);
 
-        info.innerHTML = 'Ima ukupno ' + filtered.length + ' kombinacija(e).';
-        
-        filtered.sort();
+            info.innerHTML = 'Ima ukupno ' + filtered.length + ' kombinacija(e).';
 
-        for (i = 0; i < filtered.length; i++) {
-            output.innerHTML = output.innerHTML + '<input type="button" value="' + filtered[i] + '" class="btn btn-success" onclick="disable(this)" style="margin:2px;">';
-        }
+            filtered.sort();
+
+            for (i = 0; i < filtered.length; i++) {
+                output.innerHTML = output.innerHTML + '<input type="button" value="' + filtered[i] + '" class="btn btn-success" onclick="disable(this)" style="margin:2px;">';
+            }
+        }, 500);
         // output.innerHTML = filtered.sort().join(' - '); 
     });
 
@@ -81,29 +86,29 @@ $(document).ready(function () {
         }
     });
 
-/* Preloader
-    * -------------------------------------------------- */
-   var clPreloader = function() {
-        
-    $("html").addClass('cl-preload');
+    /* Preloader
+        * -------------------------------------------------- */
+    var clPreloader = function () {
 
-    $(window).on('load', function() {
+        $("html").addClass('cl-preload');
 
-        //force page scroll position to top at page refresh
-        $('html, body').animate({ scrollTop: 0 }, 'normal');
+        $(window).on('load', function () {
 
-        // will first fade out the loading animation 
-        $("#loader").fadeOut("slow", function() {
-            // will fade out the whole DIV that covers the website.
-            $("#preloader").delay(300).fadeOut("slow");
-        }); 
-        
-        // for hero content animations 
-        $("html").removeClass('cl-preload');
-        $("html").addClass('cl-loaded');
-    
-    });
-};
-clPreloader();
+            //force page scroll position to top at page refresh
+            $('html, body').animate({ scrollTop: 0 }, 'normal');
+
+            // will first fade out the loading animation 
+            $("#loader").fadeOut("slow", function () {
+                // will fade out the whole DIV that covers the website.
+                $("#preloader").delay(300).fadeOut("slow");
+            });
+
+            // for hero content animations 
+            $("html").removeClass('cl-preload');
+            $("html").addClass('cl-loaded');
+
+        });
+    };
+    clPreloader();
 
 });
