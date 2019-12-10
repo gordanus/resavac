@@ -16,13 +16,13 @@
 </head>
 
 <body>
-        <div id="preloader">
-                <div id="loader" class="dots-jump">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
+    <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
     <div class="container">
         <h1 class="display-4 mainHeading">Rešavač za igru Park Reči</h1>
         <form>
@@ -44,7 +44,11 @@
     <script src="pace.min.js"></script>
     <script>
         function disable(elem) {
-            elem.classList.add('disabledBtn');
+            if (elem.classList.contains('disabledBtn')) {
+                elem.classList.remove('disabledBtn');
+            } else {
+                elem.classList.add('disabledBtn');
+            }
         }
     </script>
 </body>
