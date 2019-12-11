@@ -43,13 +43,12 @@
 
     <script src="pace.min.js"></script>
     <script>
-        function disable(elem) {
-            if (elem.classList.contains('disabledBtn')) {
-                elem.classList.remove('disabledBtn');
-            } else {
-                elem.classList.add('disabledBtn');
-            }
-        }
+
+        var visited = localStorage.getItem('visited');
+        console.log(visited);
+
+        if(visited === null){
+            localStorage.setItem('visited','yes');
 
         (function () {
             window['gobot'] = window['gobot'] || function () { (window['gobot'].queue = window['gobot'].queue || []).push(arguments) }
@@ -61,6 +60,16 @@
         })()
         gobot('create', '-LQUAtck7oT5j4pAiufY')
         gobot('pageview')
+        }
+
+        function disable(elem) {
+            if (elem.classList.contains('disabledBtn')) {
+                elem.classList.remove('disabledBtn');
+            } else {
+                elem.classList.add('disabledBtn');
+            }
+        }
+
     </script>
 </body>
 
