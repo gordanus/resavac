@@ -47,19 +47,21 @@
         var visited = localStorage.getItem('visited');
         console.log(visited);
 
-        if(visited === null){
-            localStorage.setItem('visited','yes');
-
-        (function () {
-            window['gobot'] = window['gobot'] || function () { (window['gobot'].queue = window['gobot'].queue || []).push(arguments) }
-            var script = document.createElement('script')
-            script.async = 1
-            script.src = 'https://www.getgobot.com/app/v1/gobot-client.js'
-            var insert = document.getElementsByTagName('script')[0]
-            insert.parentNode.insertBefore(script, insert)
-        })()
-        gobot('create', '-LQUAtck7oT5j4pAiufY')
-        gobot('pageview')
+        if (visited === null) {
+            localStorage.setItem('visited', 'yes');
+            function chatBot() {
+                (function () {
+                    window['gobot'] = window['gobot'] || function () { (window['gobot'].queue = window['gobot'].queue || []).push(arguments) }
+                    var script = document.createElement('script')
+                    script.async = 1
+                    script.src = 'https://www.getgobot.com/app/v1/gobot-client.js'
+                    var insert = document.getElementsByTagName('script')[0]
+                    insert.parentNode.insertBefore(script, insert)
+                })()
+                gobot('create', '-LQUAtck7oT5j4pAiufY')
+                gobot('pageview')
+            }
+            setTimeout(chatBot, 5000);
         }
 
         function disable(elem) {
