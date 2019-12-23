@@ -26,6 +26,8 @@ $(document).ready(function () {
 
     var output = document.getElementById('output');
     var info = document.getElementById('info');
+    var spinner = document.getElementById('spinner');
+    var btn = document.getElementById('btn');
     var dictArr = [];
 
     function compare(array1, array2) {
@@ -41,8 +43,11 @@ $(document).ready(function () {
     }
 
     $('#btn').click(function () {
-        info.innerHTML = 'Pričekajte... Kombinuju se slova...';
+        info.innerHTML = '';
         output.innerHTML = '';
+        btn.value = "Sačekajte..."
+        spinner.style.display = 'block';
+
 
         setTimeout(function () {
             var input = document.getElementById('text').value.toLowerCase();
@@ -62,13 +67,19 @@ $(document).ready(function () {
 
             info.innerHTML = 'Pronađeno je ukupno ' + filtered.length + ' reči.';
 
+
             filtered.sort();
 
             for (i = 0; i < filtered.length; i++) {
                 output.innerHTML = output.innerHTML + '<input type="button" value="' + filtered[i] + '" class="btn btn-success" onclick="disable(this)" style="margin:2px;">';
             }
+        spinner.style.display = 'none';
+        btn.value = "Pronađi kombinacije"
+
+            
         }, 500);
-        // output.innerHTML = filtered.sort().join(' - '); 
+
+
     });
 
     $('#resetBtn').click(function () {
@@ -110,5 +121,12 @@ $(document).ready(function () {
         });
     };
     clPreloader();
+
+    setTimeout(function(){$("body").overhang({
+        type: "success",
+        message: "Kombinovanje reči od 7 i više slova može da potraje nekoliko minuta.",
+        closeConfirm: true,
+        duration: 6
+    })},3000);
 
 });
