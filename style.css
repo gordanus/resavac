@@ -34,9 +34,6 @@ input[type=number], input[type=text]{
     font-family: 'Titan One', cursive;
 }
 
-input[type=number]{
-    font-size: .8em;
-}
 
 #output {
     width: 100%;
