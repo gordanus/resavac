@@ -132,6 +132,9 @@ $(document).ready(function () {
             duration: 6
         })
     }, 3000);
+    
+    var ding = new Audio('ding.mp3');
+    var audio = new Audio('elevator.mp3');
 
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
@@ -139,6 +142,22 @@ $(document).ready(function () {
         } else {
             $('.elevator-button').fadeOut();
         }
+
+        if ($('.door-left').hasClass('door-move') && $(this).scrollTop() === 0) {
+            ding.play();
+            audio.pause();
+            $('.door-left').addClass('door-move-back');
+            $('.door-left').removeClass('door-move');
+        }
+    });
+
+    $('.elevator-button').click(function () {
+        ding.play();
+        ding.pause();
+        ding.currentTime = 0;
+        audio.play();
+        $('.door-left').addClass('door-move');
+        $('.door-left').removeClass('door-move-back');
     });
 
 });

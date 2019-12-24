@@ -15,7 +15,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="overhang.min.js"></script>
-    <script src="elevator.min.js"></script>
+    <script src="elevator.js"></script>
     <script src="script.js"></script>
     <title>Park Reči</title>
 </head>
@@ -47,6 +47,10 @@
         <div id="output" class="output"></div>
 
         <div class="elevator-button"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></div>
+        <div class="door-left">
+            <div class="middle"></div>
+        </div>
+        <div class="door-right"></div>
     </div>
 
     <script src="pace.min.js"></script>
@@ -83,8 +87,6 @@
         window.onload = function () {
             var elevator = new Elevator({
                 element: document.querySelector('.elevator-button'),
-                mainAudio: 'elevator.mp3',
-                endAudio: 'ding.mp3'
             });
         }
         elevator.elevate();

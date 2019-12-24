@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
     padding-top: 20px;
     background-image: url(./bg.png);
@@ -84,7 +88,57 @@ input[type=number], input[type=text] {
     line-height: 1.18em;
     font-size: 2em;
     border-radius: 10px;
-    cursor:pointer;
+    cursor: pointer;
+}
+
+.door-left {
+    position: fixed;
+    bottom: 0;
+    left: -100vw;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(135, 206, 250, .5);
+    border: 20px solid black;
+    z-index: 500;
+    
+}
+
+.middle {
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    background-color: black;
+
+}
+
+.door-move {
+    animation: close 3s;
+    animation-fill-mode: forwards;
+}
+
+.door-move-back {
+    animation: open 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes close {
+    from {
+        left: -100vw;
+    }
+    to {
+        left: 0
+    }
+}
+
+@keyframes open {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100vw;
+    }
 }
 
 /* pace */
