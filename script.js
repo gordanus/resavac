@@ -50,12 +50,13 @@ $(document).ready(function () {
 
 
         setTimeout(function () {
-            var input = document.getElementById('text').value.toLowerCase();
+            var input = document.getElementById('text').value.toLowerCase().trim();
             var number = document.getElementById('number').value;
             var arr = getWordsNew(input);
             var arr2 = [];
+            var len = arr.length;
 
-            for (i = 0; i < arr.length; i++) {
+            for (i = 0; i < len; i++) {
                 if (arr[i].length == number) {
                     arr2.push(arr[i]);
                     // arr2 = arr.splice(i, 1);
@@ -69,14 +70,15 @@ $(document).ready(function () {
 
 
             filtered.sort();
+            var len2 = filtered.length;
 
-            for (i = 0; i < filtered.length; i++) {
+            for (i = 0; i < len2; i++) {
                 output.innerHTML = output.innerHTML + '<input type="button" value="' + filtered[i] + '" class="btn btn-success" onclick="disable(this)" style="margin:2px;">';
             }
-        spinner.style.display = 'none';
-        btn.value = "Pronađi kombinacije"
+            spinner.style.display = 'none';
+            btn.value = "Pronađi kombinacije";
 
-            
+
         }, 500);
 
 
@@ -122,11 +124,21 @@ $(document).ready(function () {
     };
     clPreloader();
 
-    setTimeout(function(){$("body").overhang({
-        type: "success",
-        message: "Kombinovanje reči od 7 i više slova može da potraje nekoliko minuta.",
-        closeConfirm: true,
-        duration: 6
-    })},3000);
+    setTimeout(function () {
+        $("body").overhang({
+            type: "success",
+            message: "Kombinovanje reči od 7 i više slova može da potraje nekoliko minuta.",
+            closeConfirm: true,
+            duration: 6
+        })
+    }, 3000);
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $('.elevator-button').fadeIn();
+        } else {
+            $('.elevator-button').fadeOut();
+        }
+    });
 
 });
