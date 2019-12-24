@@ -89,7 +89,7 @@ var Elevator = function(options) {
         );
             setTimeout(function(){
                 window.scrollTo(0, easedPosition);
-            },3500);
+            },2500);
 
         if (timeSoFar < duration) {
             animation = requestAnimationFrame(animateLoop);

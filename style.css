@@ -114,12 +114,12 @@ input[type=number], input[type=text] {
 }
 
 .door-move {
-    animation: close 3s;
+    animation: close 2s;
     animation-fill-mode: forwards;
 }
 
 .door-move-back {
-    animation: open 3s;
+    animation: open 2s;
     animation-fill-mode: forwards;
 }
 
