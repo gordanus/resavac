@@ -144,18 +144,20 @@ $(document).ready(function () {
         }
 
         if ($('.door-left').hasClass('door-move') && $(this).scrollTop() === 0) {
+            ding.pause();
+            ding.currentTime = 0;
             ding.play();
-            audio.pause();
+            // audio.pause();
             $('.door-left').addClass('door-move-back');
             $('.door-left').removeClass('door-move');
         }
     });
 
     $('.elevator-button').click(function () {
-        ding.play();
         ding.pause();
         ding.currentTime = 0;
-        audio.play();
+        ding.play();
+        // audio.play();
         $('.door-left').addClass('door-move');
         $('.door-left').removeClass('door-move-back');
     });
