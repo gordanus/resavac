@@ -66,10 +66,9 @@
     <script>
 
         var visited = localStorage.getItem('visited');
-        var regular = localStorage.getItem('regularVisitor');
         console.log(visited);
 
-            if (visited != null || visited != 'no') {
+            if (visited != null || visited === 'yes') {
                 localStorage.setItem('visited', 'no');
                 function chatBot() {
                     (function () {
