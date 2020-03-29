@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154859548-2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -69,21 +69,25 @@
         var visited = localStorage.getItem('visited');
         console.log(visited);
 
+            if (visited != null || visited === 'yes') {
+                localStorage.setItem('visited', 'no');
+                function chatBot() {
+                    (function () {
+                        window['gobot'] = window['gobot'] || function () { (window['gobot'].queue = window['gobot'].queue || []).push(arguments) }
+                        var script = document.createElement('script')
+                        script.async = 1
+                        script.src = 'https://www.getgobot.com/app/v1/gobot-client.js'
+                        var insert = document.getElementsByTagName('script')[0]
+                        insert.parentNode.insertBefore(script, insert)
+                    })()
+                    gobot('create', '-LQUAtck7oT5j4pAiufY')
+                    gobot('pageview')
+                }
+                setTimeout(chatBot, 10000);
+            }
+
         if (visited === null) {
             localStorage.setItem('visited', 'yes');
-            function chatBot() {
-                (function () {
-                    window['gobot'] = window['gobot'] || function () { (window['gobot'].queue = window['gobot'].queue || []).push(arguments) }
-                    var script = document.createElement('script')
-                    script.async = 1
-                    script.src = 'https://www.getgobot.com/app/v1/gobot-client.js'
-                    var insert = document.getElementsByTagName('script')[0]
-                    insert.parentNode.insertBefore(script, insert)
-                })()
-                gobot('create', '-LQUAtck7oT5j4pAiufY')
-                gobot('pageview')
-            }
-            setTimeout(chatBot, 10000);
         }
 
         function disable(elem) {
