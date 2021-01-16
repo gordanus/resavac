@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Mini aplikacija za traženje kombinacije slova u igri Park Reči."> 
+    <meta name="description" content="Mini aplikacija za traženje kombinacije slova u igri Park Reči.">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
@@ -39,6 +39,27 @@
         </div>
     </div>
     <div class="container">
+        <p>
+            <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#collapseExample"
+                aria-expanded="false" aria-controls="collapseExample">
+                Kontaktiraj autora
+            </button>
+        </p>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <form action="https://formspree.io/f/mvovdewy" method="POST" class="contact">
+                    <div class="form-group">
+                        <input type="text" name="ime" class="form-control" id="FormControlInput0" placeholder="*Ime" required></div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" id="FormControlInput1" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="tekst" id="FormControlTextarea1" rows="3" placeholder="*Komentar..." required></textarea>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Pošalji</button>
+                </form>
+            </div>
+        </div>
         <h1 class="display-4 mainHeading">Rešavač za igru Park Reči</h1>
         <form>
             <div class="form-row justify-content-center">
@@ -69,22 +90,22 @@
         var visited = localStorage.getItem('visited');
         console.log(visited);
 
-            if (visited != null || visited === 'yes') {
-                localStorage.setItem('visited', 'no');
-                function chatBot() {
-                    (function () {
-                        window['gobot'] = window['gobot'] || function () { (window['gobot'].queue = window['gobot'].queue || []).push(arguments) }
-                        var script = document.createElement('script')
-                        script.async = 1
-                        script.src = 'https://www.getgobot.com/app/v1/gobot-client.js'
-                        var insert = document.getElementsByTagName('script')[0]
-                        insert.parentNode.insertBefore(script, insert)
-                    })()
-                    gobot('create', '-LQUAtck7oT5j4pAiufY')
-                    gobot('pageview')
-                }
-                setTimeout(chatBot, 10000);
+        if (visited != null || visited === 'yes') {
+            localStorage.setItem('visited', 'no');
+            function chatBot() {
+                (function () {
+                    window['gobot'] = window['gobot'] || function () { (window['gobot'].queue = window['gobot'].queue || []).push(arguments) }
+                    var script = document.createElement('script')
+                    script.async = 1
+                    script.src = 'https://www.getgobot.com/app/v1/gobot-client.js'
+                    var insert = document.getElementsByTagName('script')[0]
+                    insert.parentNode.insertBefore(script, insert)
+                })()
+                gobot('create', '-LQUAtck7oT5j4pAiufY')
+                gobot('pageview')
             }
+            setTimeout(chatBot, 10000);
+        }
 
         if (visited === null) {
             localStorage.setItem('visited', 'yes');
@@ -104,6 +125,25 @@
             });
         }
         elevator.elevate();
+
+
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
 
     </script>
 </body>

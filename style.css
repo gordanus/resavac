@@ -35,9 +35,19 @@ form {
     margin-bottom: 20px;
 }
 
-input[type=number], input[type=text] {
+input[type=number], input[type=text], input[type=email], textarea {
     font-family: 'Titan One', cursive;
 }
+
+.collapse{
+    margin-bottom: 10px;
+}
+
+.btn-warning {
+    color: #fff;
+}
+
+
 
 #output {
     width: 100%;
@@ -746,8 +756,12 @@ input[type=number], input[type=text] {
     .btn-success {
         width: 100%;
     }
-    input[type=number], input[type=text] {
+    input[type=number], input[type=text], input[type=email], textarea {
         text-align: center;
         font-family: 'Titan One', cursive;
+    }
+
+    .contact input, .contact textarea {
+        text-align: left;
     }
 }
