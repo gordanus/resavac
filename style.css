@@ -75,6 +75,10 @@ input[type=number], input[type=text], input[type=email], textarea {
     text-transform: uppercase;
 }
 
+.modal-header h5 {
+    font-family: 'Titan One', cursive;
+}
+
 .spinner {
     position: absolute;
     top: 50%;
@@ -758,6 +762,10 @@ input[type=number], input[type=text], input[type=email], textarea {
     }
     input[type=number], input[type=text], input[type=email], textarea {
         text-align: center;
+        font-family: 'Titan One', cursive;
+    }
+
+    .modal-header h5 {
         font-family: 'Titan One', cursive;
     }
 

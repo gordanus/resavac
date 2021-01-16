@@ -39,7 +39,41 @@
         </div>
     </div>
     <div class="container">
-        <p>
+
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
+    Kontaktiraj autora
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Kontaktiraj autora</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form action="https://formspree.io/f/mvovdewy" method="POST" class="contact">
+                <div class="form-group">
+                    <input type="text" name="ime" class="form-control" id="FormControlInput0" placeholder="*Ime" required></div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" id="FormControlInput1" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" name="tekst" id="FormControlTextarea1" rows="3" placeholder="*Komentar..." required></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Pošalji poruku</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        <!-- <p>
             <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#collapseExample"
                 aria-expanded="false" aria-controls="collapseExample">
                 Kontaktiraj autora
@@ -59,7 +93,7 @@
                     <button class="btn btn-primary" type="submit">Pošalji</button>
                 </form>
             </div>
-        </div>
+        </div> -->
         <h1 class="display-4 mainHeading">Rešavač za igru Park Reči</h1>
         <form>
             <div class="form-row justify-content-center">
