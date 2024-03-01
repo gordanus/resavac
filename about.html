@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Mini aplikacija za traženje kombinacije slova u igri Park Reči.">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Titan+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="overhang.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!-- <script src="overhang.min.js"></script> -->
+  <script src="elevator.js"></script>
+  <script src="script.js"></script>
+  <title>Kako da zaradite na netu?</title>
+</head>
+
+<body>
+  <div class="container" style="background-color: rgba(255, 255, 255, 0.8);">
+    <h1 class="display-5 mainHeading">Kako da zaradite na netu?</h1>
+    <p class="text-left">
+      Ovo sam otkrio pre nekoliko meseci i super je način da se prikupi koji evro, a da pritom ne moram apsolutno ništa da radim. Ovaj način se naziva <i>pasivna zarada.</i><br>
+      Doduše, zarada nije velika i ide polako, ali stabilno.<br>
+      Sistem je potpuno bezbedan, ne dajete nikakve lične podatke ili pristup nikome. Takođe je i skroz legalan, za razliku od rudarenja bitkoina.<br><br>
+      U pitanju je servis <b>HoneyGain.</b>
+    </p>
+    <h4 class="mainHeading">Šta je HoneyGain i kako radi?</h4>
+    <p class="text-left">Honeygain je platforma koja vam omogućava da zaradite pasivni prihod deljenjem vaše internet veze. Kada instalirate aplikaciju, ona bezbedno koristi vaš neiskorišćeni internet za pretraživanje weba i isporuku sadržaja. Vaša privatnost je zaštićena i zarađujete kredite za deljeni internet. Aplikacija radi u pozadini, a svoje kredite možete pretvoriti u pravi novac kada dostignete minimalni prag isplate od 20 USD. To je jednostavan i lak način da unovčite svoju internet vezu, koju već svakako plaćate. Što više uređaja povežete, brža je i zarada.</p>
+    <p class="text-left">Poklanjam vam vaučer link sa promo kodom, preko kojeg možete da se prijavite, da kreirate nalog i odmah u startu da imate već <b>3 dolara</b> kredita!
+    <br>
+    Ako vam se dopadne, prenesite informaciju i vašim prijateljima i pošaljite im ovaj promo link da i oni započnu sa poklonom od 3 dolara. 
+    </p>
+    <h5><a href="https://r.honeygain.me/GORDACA831" target="_blank">PROMO KOD</a></h5>
+    <p class="text-left">U nastavku je kratak video kako radi HoneyGain.</p>
+    <iframe width="500" height="315" src="https://www.youtube.com/embed/kJXLBXuWzMI?si=jo4Xw7ggyjqwaA00" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+    <div class="elevator-button"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></div>
+    <div class="door-left">
+      <div class="middle"></div>
+    </div>
+    <div class="door-right"></div>
+  </div>
+
+  <script src="pace.min.js"></script>
+  <script>
+
+    window.onload = function () {
+      var elevator = new Elevator({
+        element: document.querySelector('.elevator-button'),
+      });
+    }
+    elevator.elevate();
+
+
+    (function () {
+      'use strict';
+      window.addEventListener('load', function () {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function (form) {
+          form.addEventListener('submit', function (event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+
+  </script>
+
+</body>
+
+</html>

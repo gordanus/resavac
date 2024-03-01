@@ -162,4 +162,6 @@ $(document).ready(function () {
         $('.door-left').removeClass('door-move-back');
     });
 
+    setTimeout(function(){$('#exampleModal').modal('show')},6000);
+
 });
